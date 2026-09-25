@@ -129,7 +129,8 @@ await replace(
   [
     '        {/if}',
     '        {#if mode === \'2d\'}',
-    '          <NexoCopilot />',\n    '          <TemploMaterialDock />',
+    '          <NexoCopilot />',
+    '          <TemploMaterialDock />',
     '        {/if}',
     '      </div>',
     '      {#if showLayers && mode === \'2d\'}'
