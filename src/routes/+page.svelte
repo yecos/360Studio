@@ -194,26 +194,17 @@
   <div class="max-w-5xl mx-auto px-6 pt-8">
     <div class="grid gap-3 md:grid-cols-3">
       <a href={`${base}/templo-library`} class="group rounded-2xl border border-black/8 bg-white/65 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-        <div class="flex items-center justify-between">
-          <span class="rounded-xl bg-[#171511] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#d7bd8b]">TEMPLO</span>
-          <span class="text-[#8a7659] transition group-hover:translate-x-1">→</span>
-        </div>
+        <div class="flex items-center justify-between"><span class="rounded-xl bg-[#171511] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#d7bd8b]">TEMPLO</span><span class="text-[#8a7659] transition group-hover:translate-x-1">→</span></div>
         <h2 class="mt-5 text-lg font-semibold">Biblioteca de materiales</h2>
         <p class="mt-1 text-sm leading-6 text-[#777066]">Referencias, acabados y paletas listas para el flujo de interiorismo.</p>
       </a>
       <div class="rounded-2xl border border-black/8 bg-white/40 p-5">
-        <div class="flex items-center justify-between">
-          <span class="rounded-xl bg-[#ede5d8] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#8b6e48]">AI</span>
-          <span class="text-[10px] uppercase tracking-[0.16em] text-[#a0988c]">Próximo</span>
-        </div>
+        <div class="flex items-center justify-between"><span class="rounded-xl bg-[#ede5d8] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#8b6e48]">AI</span><span class="text-[10px] uppercase tracking-[0.16em] text-[#a0988c]">Próximo</span></div>
         <h2 class="mt-5 text-lg font-semibold">Design Copilot</h2>
         <p class="mt-1 text-sm leading-6 text-[#8a8379]">Edición del proyecto y variantes de diseño mediante lenguaje natural.</p>
       </div>
       <div class="rounded-2xl border border-black/8 bg-white/40 p-5">
-        <div class="flex items-center justify-between">
-          <span class="rounded-xl bg-[#ede5d8] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#8b6e48]">CLIENT</span>
-          <span class="text-[10px] uppercase tracking-[0.16em] text-[#a0988c]">Próximo</span>
-        </div>
+        <div class="flex items-center justify-between"><span class="rounded-xl bg-[#ede5d8] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#8b6e48]">CLIENT</span><span class="text-[10px] uppercase tracking-[0.16em] text-[#a0988c]">Próximo</span></div>
         <h2 class="mt-5 text-lg font-semibold">Portal del cliente</h2>
         <p class="mt-1 text-sm leading-6 text-[#8a8379]">Comparaciones, comentarios, aprobaciones y presentación interactiva.</p>
       </div>

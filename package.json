@@ -1,7 +1,7 @@
 {
   "name": "nexo-space-ai",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "NEXO SPACE AI — architecture and interior design workspace powered by an open-source 2D/3D planning core",
   "author": "NEXO STUDIO",
   "license": "MIT",

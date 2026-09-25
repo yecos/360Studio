@@ -9,7 +9,7 @@ export function GET() {
     status: 'ok',
     product: NEXO_BRAND.product,
     studio: NEXO_BRAND.studio,
-    version: '0.1.0',
+    version: '0.2.0',
     core: 'OpenPlan3D',
     features: NEXO_FEATURES
   });
