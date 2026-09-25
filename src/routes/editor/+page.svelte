@@ -17,6 +17,7 @@
   import BuildPanel from '$lib/components/sidebar/BuildPanel.svelte';
   import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';
   import TemploMaterialDock from '$lib/nexo/TemploMaterialDock.svelte';
+  import NexoCopilot from '$lib/nexo/NexoCopilot.svelte';
   import LayersPanel from '$lib/components/sidebar/LayersPanel.svelte';
 
   let showLayers = $state(false);
@@ -257,6 +258,7 @@
           {/if}
         {/if}
         {#if mode === '2d'}
+          <NexoCopilot />
           <TemploMaterialDock />
         {/if}
       </div>
