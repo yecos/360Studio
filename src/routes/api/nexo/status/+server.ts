@@ -11,6 +11,7 @@ export function GET() {
     studio: NEXO_BRAND.studio,
     version: '0.2.0',
     core: 'OpenPlan3D',
+    copilot: { mode: 'hybrid', structuredActions: true, provider: 'openai-compatible' },
     features: NEXO_FEATURES
   });
 }
