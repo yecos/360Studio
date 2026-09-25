@@ -73,6 +73,22 @@ await replace('src/routes/+page.svelte', `  <div class="max-w-5xl mx-auto px-6 p
 await replace('src/routes/+page.svelte', 'text-blue-600 underline', 'text-[#7b6240] underline', false);
 await replace('src/routes/+page.svelte', 'bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-semibold', 'bg-[#c5a675] text-[#171511] rounded-lg hover:bg-[#d7bd8b] font-semibold', false);
 
+
+await replace('src/routes/editor/+page.svelte',
+  "  import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';",
+  "  import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';\n  import TemploMaterialDock from '$lib/nexo/TemploMaterialDock.svelte';");
+
+await replace('src/routes/editor/+page.svelte',
+`        {/if}
+      </div>
+      {#if showLayers && mode === '2d'}`,
+`        {/if}
+        {#if mode === '2d'}
+          <TemploMaterialDock />
+        {/if}
+      </div>
+      {#if showLayers && mode === '2d'}`);
+
 await replace('src/lib/utils/export.ts', "pdf.text('openplan3d.com', col2 + 4, tbY + 9);", "pdf.text('NEXO SPACE AI', col2 + 4, tbY + 9);");
 await replace('src/lib/utils/export.ts', "pdf.text('Created with Open 3D Floor Planner', col2 + 4, tbY + 15);", "pdf.text('NEXO STUDIO · Architecture & Interior Design', col2 + 4, tbY + 15);");
 await replace('src/routes/render-lab/+page.svelte', '<svelte:head><title>Render lab · OpenPlan3D</title>', '<svelte:head><title>Render Lab · NEXO SPACE AI</title>', false);
