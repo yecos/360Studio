@@ -3,7 +3,7 @@ export const NEXO_FEATURES = {
   localProjects: true,
   aiRender: true,
   cloudProjects: false,
-  temploLibrary: false,
+  temploLibrary: true,
   designCopilot: false,
   clientPortal: false
 } as const;
