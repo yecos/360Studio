@@ -16,6 +16,7 @@
   import TopBar from '$lib/components/toolbar/TopBar.svelte';
   import BuildPanel from '$lib/components/sidebar/BuildPanel.svelte';
   import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';
+  import TemploMaterialDock from '$lib/nexo/TemploMaterialDock.svelte';
   import LayersPanel from '$lib/components/sidebar/LayersPanel.svelte';
 
   let showLayers = $state(false);
@@ -254,6 +255,9 @@
           {:else}
             <div class="flex items-center justify-center h-full text-slate-400">{$t('shortcuts.loading3d')}</div>
           {/if}
+        {/if}
+        {#if mode === '2d'}
+          <TemploMaterialDock />
         {/if}
       </div>
       {#if showLayers && mode === '2d'}
