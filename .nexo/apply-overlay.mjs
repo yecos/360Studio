@@ -30,6 +30,46 @@ await replace('src/routes/+page.svelte', `<div>\n        <h1 class="text-2xl fon
 await replace('src/routes/+page.svelte', 'bg-blue-500 text-white rounded-lg hover:bg-blue-600', 'bg-[#c5a675] text-[#171511] rounded-lg hover:bg-[#d7bd8b]');
 await replace('src/routes/+page.svelte', 'shadow-blue-500/25', 'shadow-black/20');
 await replace('src/routes/+page.svelte', 'hover:shadow-blue-500/40', 'hover:shadow-black/30');
+await replace('src/routes/+page.svelte', `      <div class="flex flex-wrap items-center gap-3">
+        <button
+          onclick={() => showTemplateModal = true}`, `      <div class="flex flex-wrap items-center gap-3">
+        <a
+          href={\`\${base}/templo-library\`}
+          class="px-4 py-2.5 bg-[#d7bd8b]/10 text-[#e5d2af] rounded-lg hover:bg-[#d7bd8b]/20 font-medium text-sm transition-all flex items-center gap-2 border border-[#d7bd8b]/25"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2Z"/><path d="M8 7h6M8 11h6M8 15h4"/></svg>
+          Biblioteca TEMPLO
+        </a>
+        <button
+          onclick={() => showTemplateModal = true}`);
+
+await replace('src/routes/+page.svelte', `  <div class="max-w-5xl mx-auto px-6 py-8">
+    {#if duplicating}`, `  <div class="max-w-5xl mx-auto px-6 pt-8">
+    <div class="grid gap-3 md:grid-cols-3">
+      <a href={\`\${base}/templo-library\`} class="group rounded-2xl border border-black/8 bg-white/65 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <div class="flex items-center justify-between">
+          <span class="rounded-xl bg-[#171511] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#d7bd8b]">TEMPLO</span>
+          <span class="text-[#8a7659] transition group-hover:translate-x-1">→</span>
+        </div>
+        <h2 class="mt-5 text-lg font-semibold">Biblioteca de materiales</h2>
+        <p class="mt-1 text-sm leading-6 text-[#777066]">Referencias, acabados y paletas listas para el flujo de interiorismo.</p>
+      </a>
+      <div class="rounded-2xl border border-black/8 bg-white/40 p-5">
+        <div class="flex items-center justify-between"><span class="rounded-xl bg-[#ede5d8] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#8b6e48]">AI</span><span class="text-[10px] uppercase tracking-[0.16em] text-[#a0988c]">Próximo</span></div>
+        <h2 class="mt-5 text-lg font-semibold">Design Copilot</h2>
+        <p class="mt-1 text-sm leading-6 text-[#8a8379]">Edición del proyecto y variantes de diseño mediante lenguaje natural.</p>
+      </div>
+      <div class="rounded-2xl border border-black/8 bg-white/40 p-5">
+        <div class="flex items-center justify-between"><span class="rounded-xl bg-[#ede5d8] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#8b6e48]">CLIENT</span><span class="text-[10px] uppercase tracking-[0.16em] text-[#a0988c]">Próximo</span></div>
+        <h2 class="mt-5 text-lg font-semibold">Portal del cliente</h2>
+        <p class="mt-1 text-sm leading-6 text-[#8a8379]">Comparaciones, comentarios, aprobaciones y presentación interactiva.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 py-8">
+    {#if duplicating}`);
+
 await replace('src/routes/+page.svelte', 'text-blue-600 underline', 'text-[#7b6240] underline', false);
 await replace('src/routes/+page.svelte', 'bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-semibold', 'bg-[#c5a675] text-[#171511] rounded-lg hover:bg-[#d7bd8b] font-semibold', false);
 
@@ -40,6 +80,6 @@ await replace('src/routes/render-lab/+page.svelte', '<span class="mark">◈</spa
 
 await write('src/lib/nexo/brand.ts', `export const NEXO_BRAND = {\n  product: 'NEXO SPACE AI',\n  studio: 'NEXO STUDIO',\n  tagline: 'Architecture & Interior Design OS',\n  colors: { ink: '#171511', ivory: '#f3efe7', sand: '#c5a675', gold: '#d7bd8b' }\n} as const;\n`);
 await write('static/nexo-space-ai.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#171511"/><path d="M16 44V20h5l22 24h5V20" fill="none" stroke="#d7bd8b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>\n`);
-await write('src/lib/nexo/features.ts', `export const NEXO_FEATURES = {\n  corePlanner: true,\n  localProjects: true,\n  aiRender: true,\n  cloudProjects: false,\n  temploLibrary: false,\n  designCopilot: false,\n  clientPortal: false\n} as const;\n`);\n\nawait write('src/routes/api/nexo/status/+server.ts', `import { json } from '@sveltejs/kit';\nimport { NEXO_BRAND } from '$lib/nexo/brand';\nimport { NEXO_FEATURES } from '$lib/nexo/features';\n\nexport const prerender = false;\n\nexport function GET() {\n  return json({\n    status: 'ok',\n    product: NEXO_BRAND.product,\n    studio: NEXO_BRAND.studio,\n    version: '0.1.0',\n    core: 'OpenPlan3D',\n    features: NEXO_FEATURES\n  });\n}\n`);\n\nawait write('NEXO_UPSTREAM.md', `# NEXO SPACE AI upstream strategy\n\nCore upstream: https://github.com/laanlabs/openPlan3D\n\nThe project intentionally preserves OpenPlan3D file/package schema identifiers so existing project data remains compatible. NEXO-specific product code should prefer the \`src/lib/nexo\` namespace and the \`.nexo\` automation layer.\n\nDo not replace upstream copyright/license notices when syncing.\n`);
+await write('src/lib/nexo/features.ts', `export const NEXO_FEATURES = {\n  corePlanner: true,\n  localProjects: true,\n  aiRender: true,\n  cloudProjects: false,\n  temploLibrary: true,\n  designCopilot: false,\n  clientPortal: false\n} as const;\n`);\n\nawait write('src/routes/api/nexo/status/+server.ts', `import { json } from '@sveltejs/kit';\nimport { NEXO_BRAND } from '$lib/nexo/brand';\nimport { NEXO_FEATURES } from '$lib/nexo/features';\n\nexport const prerender = false;\n\nexport function GET() {\n  return json({\n    status: 'ok',\n    product: NEXO_BRAND.product,\n    studio: NEXO_BRAND.studio,\n    version: '0.1.0',\n    core: 'OpenPlan3D',\n    features: NEXO_FEATURES\n  });\n}\n`);\n\nawait write('NEXO_UPSTREAM.md', `# NEXO SPACE AI upstream strategy\n\nCore upstream: https://github.com/laanlabs/openPlan3D\n\nThe project intentionally preserves OpenPlan3D file/package schema identifiers so existing project data remains compatible. NEXO-specific product code should prefer the \`src/lib/nexo\` namespace and the \`.nexo\` automation layer.\n\nDo not replace upstream copyright/license notices when syncing.\n`);
 
 console.log('NEXO overlay applied successfully.');
