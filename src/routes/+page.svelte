@@ -165,6 +165,13 @@
         </div>
       </div>
       <div class="flex flex-wrap items-center gap-3">
+        <a
+          href={`${base}/templo-library`}
+          class="px-4 py-2.5 bg-[#d7bd8b]/10 text-[#e5d2af] rounded-lg hover:bg-[#d7bd8b]/20 font-medium text-sm transition-all flex items-center gap-2 border border-[#d7bd8b]/25"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2Z"/><path d="M8 7h6M8 11h6M8 15h4"/></svg>
+          Biblioteca TEMPLO
+        </a>
         <button
           onclick={() => showTemplateModal = true}
           class="px-4 py-2.5 bg-white/10 text-white rounded-lg hover:bg-white/20 font-medium text-sm transition-all flex items-center gap-2 border border-white/20"
@@ -180,6 +187,35 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           {$t('library.new')}
         </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 pt-8">
+    <div class="grid gap-3 md:grid-cols-3">
+      <a href={`${base}/templo-library`} class="group rounded-2xl border border-black/8 bg-white/65 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <div class="flex items-center justify-between">
+          <span class="rounded-xl bg-[#171511] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#d7bd8b]">TEMPLO</span>
+          <span class="text-[#8a7659] transition group-hover:translate-x-1">→</span>
+        </div>
+        <h2 class="mt-5 text-lg font-semibold">Biblioteca de materiales</h2>
+        <p class="mt-1 text-sm leading-6 text-[#777066]">Referencias, acabados y paletas listas para el flujo de interiorismo.</p>
+      </a>
+      <div class="rounded-2xl border border-black/8 bg-white/40 p-5">
+        <div class="flex items-center justify-between">
+          <span class="rounded-xl bg-[#ede5d8] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#8b6e48]">AI</span>
+          <span class="text-[10px] uppercase tracking-[0.16em] text-[#a0988c]">Próximo</span>
+        </div>
+        <h2 class="mt-5 text-lg font-semibold">Design Copilot</h2>
+        <p class="mt-1 text-sm leading-6 text-[#8a8379]">Edición del proyecto y variantes de diseño mediante lenguaje natural.</p>
+      </div>
+      <div class="rounded-2xl border border-black/8 bg-white/40 p-5">
+        <div class="flex items-center justify-between">
+          <span class="rounded-xl bg-[#ede5d8] px-3 py-2 text-xs font-semibold tracking-[0.15em] text-[#8b6e48]">CLIENT</span>
+          <span class="text-[10px] uppercase tracking-[0.16em] text-[#a0988c]">Próximo</span>
+        </div>
+        <h2 class="mt-5 text-lg font-semibold">Portal del cliente</h2>
+        <p class="mt-1 text-sm leading-6 text-[#8a8379]">Comparaciones, comentarios, aprobaciones y presentación interactiva.</p>
       </div>
     </div>
   </div>
