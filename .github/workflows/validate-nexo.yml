@@ -19,8 +19,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: validate-nexo-${{ github.ref }}
-  cancel-in-progress: true
+  group: validate-nexo-${{ github.ref }}-${{ github.sha }}
+  cancel-in-progress: false
 
 jobs:
   validate:
