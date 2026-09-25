@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "src/**"
+      - "tests/nexo-*.test.ts"
       - "static/**"
       - "package.json"
       - "package-lock.json"
@@ -30,5 +31,6 @@ jobs:
           node-version: "24"
           cache: npm
       - run: npm ci
+      - run: npm test -- --run tests/nexo-copilot-provider.test.ts
       - run: npm run check
       - run: npm run build
