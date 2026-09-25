@@ -7,6 +7,8 @@ export type NexoMaterial = {
   finish: string;
   tone: string;
   swatch: string;
+  color: string;
+  rendererFinish: 'Wood' | 'Metal' | 'Fabric' | 'Leather' | 'Glass' | 'Plastic' | 'Stone' | 'Ceramic';
   tags: string[];
 };
 
@@ -20,6 +22,8 @@ export const TEMPLO_MATERIALS: NexoMaterial[] = [
     finish: 'Veta natural',
     tone: 'Cálido claro',
     swatch: 'linear-gradient(135deg,#d9c3a1 0%,#c8aa7e 28%,#ead8bd 52%,#b89568 72%,#dbc7a6 100%)',
+    color: '#c9aa7f',
+    rendererFinish: 'Wood',
     tags: ['mobiliario', 'panelados', 'centros de TV']
   },
   {
@@ -31,6 +35,8 @@ export const TEMPLO_MATERIALS: NexoMaterial[] = [
     finish: 'Mate',
     tone: 'Gris perla',
     swatch: 'linear-gradient(135deg,#deddd8,#c9c8c2 55%,#e9e8e3)',
+    color: '#d3d2cc',
+    rendererFinish: 'Wood',
     tags: ['mobiliario', 'neutro', 'interiores']
   },
   {
@@ -42,6 +48,8 @@ export const TEMPLO_MATERIALS: NexoMaterial[] = [
     finish: 'Mate',
     tone: 'Beige claro',
     swatch: 'linear-gradient(135deg,#d8cbb8,#cbbca6 48%,#e6ddcf)',
+    color: '#d2c4b0',
+    rendererFinish: 'Wood',
     tags: ['cabeceros', 'mobiliario', 'beige']
   },
   {
@@ -53,6 +61,8 @@ export const TEMPLO_MATERIALS: NexoMaterial[] = [
     finish: 'Texturizado',
     tone: 'Madera media',
     swatch: 'linear-gradient(135deg,#8b6748,#b28b64 32%,#765237 58%,#a67d58 82%,#7f5a3d)',
+    color: '#9a7251',
+    rendererFinish: 'Wood',
     tags: ['mobiliario', 'acentos', 'madera']
   },
   {
@@ -64,6 +74,8 @@ export const TEMPLO_MATERIALS: NexoMaterial[] = [
     finish: 'Pulido',
     tone: 'Blanco / gris',
     swatch: 'linear-gradient(135deg,#f2f0ec 0%,#d5d3d0 22%,#faf9f6 48%,#bdbdbb 50%,#ece9e4 72%,#d1cfcc 100%)',
+    color: '#e7e5e1',
+    rendererFinish: 'Stone',
     tags: ['cubiertas', 'piedra', 'superficies']
   },
   {
@@ -75,6 +87,8 @@ export const TEMPLO_MATERIALS: NexoMaterial[] = [
     finish: 'Reflectivo',
     tone: 'Bronce oscuro',
     swatch: 'linear-gradient(135deg,#4d392d,#a37a58 42%,#5c4333 58%,#c09a75)',
+    color: '#8a654a',
+    rendererFinish: 'Metal',
     tags: ['bar', 'detalles', 'reflectivo']
   }
 ];
