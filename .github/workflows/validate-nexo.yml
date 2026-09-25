@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "src/**"
+      - ".github/workflows/validate-nexo.yml"
       - "tests/nexo-*.test.ts"
       - "static/**"
       - "package.json"
