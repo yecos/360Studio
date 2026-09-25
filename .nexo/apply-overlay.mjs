@@ -142,6 +142,27 @@ await replace('src/lib/utils/export.ts', "pdf.text('Created with Open 3D Floor P
 await replace('src/routes/render-lab/+page.svelte', '<svelte:head><title>Render lab · OpenPlan3D</title>', '<svelte:head><title>Render Lab · NEXO SPACE AI</title>', false);
 await replace('src/routes/render-lab/+page.svelte', '<span class="mark">◈</span> OpenPlan3D', '<span class="mark">◈</span> NEXO SPACE AI', false);
 
+await write('svelte.config.js', [
+  "import adapter from '@sveltejs/adapter-auto';",
+  '',
+  '/** @type {import(\'@sveltejs/kit\').Config} */',
+  'const config = {',
+  '  kit: {',
+  '    adapter: adapter()',
+  '  }',
+  '};',
+  '',
+  'export default config;',
+  ''
+].join('\n'));
+
+await replace(
+  'vite.config.ts',
+  "if (config.command === 'build' && !config.isProduction) {",
+  "if (config.command === 'build' && process.env.npm_lifecycle_event === 'build' && !config.isProduction) {",
+  false
+);
+
 await write('src/lib/nexo/brand.ts', [
   'export const NEXO_BRAND = {',
   "  product: 'NEXO SPACE AI',",
