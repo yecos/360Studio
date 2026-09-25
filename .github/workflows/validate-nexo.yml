@@ -1,0 +1,34 @@
+name: Validate NEXO SPACE AI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "static/**"
+      - "package.json"
+      - "package-lock.json"
+      - "vite.config.*"
+      - "svelte.config.*"
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-nexo-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
