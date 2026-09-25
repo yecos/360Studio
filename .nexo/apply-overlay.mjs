@@ -116,7 +116,7 @@ await replace(
 await replace(
   'src/routes/editor/+page.svelte',
   "  import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';",
-  "  import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';\n  import TemploMaterialDock from '$lib/nexo/TemploMaterialDock.svelte';"
+  "  import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';\n  import TemploMaterialDock from '$lib/nexo/TemploMaterialDock.svelte';\n  import NexoCopilot from '$lib/nexo/NexoCopilot.svelte';"
 );
 
 await replace(
@@ -129,7 +129,7 @@ await replace(
   [
     '        {/if}',
     '        {#if mode === \'2d\'}',
-    '          <TemploMaterialDock />',
+    '          <NexoCopilot />',\n    '          <TemploMaterialDock />',
     '        {/if}',
     '      </div>',
     '      {#if showLayers && mode === \'2d\'}'
@@ -158,7 +158,7 @@ await write('src/lib/nexo/features.ts', [
   '  aiRender: true,',
   '  cloudProjects: false,',
   '  temploLibrary: true,',
-  '  designCopilot: false,',
+  '  designCopilot: true,',
   '  clientPortal: false',
   '} as const;',
   ''
