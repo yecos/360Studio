@@ -4,6 +4,6 @@ export const NEXO_FEATURES = {
   aiRender: true,
   cloudProjects: false,
   temploLibrary: true,
-  designCopilot: false,
+  designCopilot: true,
   clientPortal: false
 } as const;
