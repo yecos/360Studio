@@ -133,6 +133,7 @@ export function validateCopilotPlan(plan: unknown, context: NexoCopilotContext):
   if (plan.actions.length > MAX_ACTIONS) throw new Error('El plan de IA contiene demasiadas acciones.');
 
   const furnitureIds = new Set(context.floor.furniture.map(item => item.id));
+  const lockedIds = new Set(context.floor.furniture.filter(item => item.locked).map(item => item.id));
   const materialIds = new Set(TEMPLO_MATERIALS.map(material => material.id));
   const validTypes = new Set(['apply-material', 'clear-material', 'set-dimension', 'rotate-by', 'set-color']);
   const validAxes = new Set(['width', 'depth', 'height']);
@@ -140,6 +141,9 @@ export function validateCopilotPlan(plan: unknown, context: NexoCopilotContext):
   const actions: NexoCopilotAIAction[] = plan.actions.map((raw, index) => {
     if (!isRecord(raw) || typeof raw.targetId !== 'string' || !furnitureIds.has(raw.targetId)) {
       throw new Error(`La acción ${index + 1} apunta a un mueble que no existe en el piso actual.`);
+    }
+    if (lockedIds.has(raw.targetId)) {
+      throw new Error(`La acción ${index + 1} intenta modificar un mueble bloqueado.`);
     }
     if (typeof raw.type !== 'string' || !validTypes.has(raw.type)) {
       throw new Error(`La acción ${index + 1} usa un tipo no permitido.`);
